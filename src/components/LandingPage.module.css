@@ -1,0 +1,238 @@
+.landingPage {
+  background: #080307;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 683px;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.gradient1 {
+  position: absolute;
+  width: 700px;
+  height: 500px;
+  left: 331.67px;
+  top: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(42, 24, 160, 0.32) 0%, rgba(20, 10, 100, 0.14) 40%, transparent 70%);
+}
+
+.gradient2 {
+  position: absolute;
+  width: 300px;
+  height: 600px;
+  left: 0;
+  top: 0;
+  background: radial-gradient(ellipse at 0% 0%, rgba(30, 18, 130, 0.18) 0%, transparent 65%);
+}
+
+.gradient3 {
+  position: absolute;
+  width: 300px;
+  height: 600px;
+  right: 0;
+  top: 0;
+  background: radial-gradient(ellipse at 100% 0%, rgba(30, 18, 130, 0.18) 0%, transparent 65%);
+}
+
+.gradient4 {
+  position: absolute;
+  width: 384px;
+  height: 384px;
+  left: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 0% 100%, rgba(155, 0, 25, 0.38) 0%, rgba(100, 0, 15, 0.12) 45%, transparent 70%);
+}
+
+.gradient5 {
+  position: absolute;
+  width: 384px;
+  height: 384px;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 100% 100%, rgba(155, 0, 25, 0.38) 0%, rgba(100, 0, 15, 0.12) 45%, transparent 70%);
+}
+
+.gradient6 {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(25, 5, 10, 0.5) 0%, transparent 65%);
+}
+
+.gradient7 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8, 3, 7, 0.7) 0%, transparent 18%, transparent 82%, rgba(8, 3, 7, 0.7) 100%);
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(155, 0, 25, 0.15), transparent 40%);
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 64px 16px;
+  z-index: 1;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.lineLeft,
+.lineRight {
+  width: 112px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(155, 0, 25, 0.8));
+}
+
+.lineRight {
+  background: linear-gradient(270deg, transparent, rgba(155, 0, 25, 0.8));
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, rgba(155, 0, 25, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.heading {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 80px;
+  color: #f0e4d0;
+  text-align: center;
+  letter-spacing: 16px;
+  text-transform: uppercase;
+  line-height: 1.12;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dividerContainer {
+  padding: 32px 0 28px;
+}
+
+.divider {
+  width: 72px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(155, 0, 25, 0.9), transparent);
+}
+
+.tagline {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #f0e4d0;
+  text-align: center;
+  letter-spacing: 0.4px;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 320px;
+}
+
+.enterButton {
+  margin-top: 48px;
+  padding: 15.71px 0;
+  width: 279.78px;
+  height: 51.66px;
+  border: 0.716px solid rgba(180, 0, 30, 0.45);
+  border-radius: inherit;
+  background: linear-gradient(169.54deg, rgb(155, 0, 32) 0%, rgb(90, 0, 18) 100%);
+  color: #f0e4d0;
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 12.16px;
+  letter-spacing: 2.68px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(140, 0, 20, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.enterButton:hover {
+  box-shadow: 0 0 35px rgba(140, 0, 20, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+}
+
+.subtitle {
+  margin-top: 32px;
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 9.28px;
+  color: #9a7a70;
+  text-align: center;
+  letter-spacing: 1.48px;
+  text-transform: uppercase;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 5px;
+  height: 49px;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(180deg, transparent, rgba(155, 0, 25, 0.7), transparent);
+}
+
+.scrollDot {
+  width: 5px;
+  height: 5px;
+  background: rgba(155, 0, 25, 0.7);
+  border-radius: 50%;
+}
+
+/* Canvas overlay for psychotropic background */
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Wormhole transition — content sinks into the portal */
+.wormhole .content {
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 1.8s cubic-bezier(0.7, 0, 0.3, 1), opacity 1.2s ease;
+  transform-origin: var(--mouse-x, 50%) var(--mouse-y, 50%);
+  pointer-events: none;
+}
+
+.wormhole .enterButton {
+  pointer-events: none;
+}

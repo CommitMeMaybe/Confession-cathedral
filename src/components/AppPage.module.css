@@ -1,0 +1,281 @@
+.appPage {
+  background: #080307;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  min-height: 683px;
+  height: 100vh;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.gradient1 {
+  position: absolute;
+  width: 500px;
+  height: 360px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(42, 24, 160, 0.2) 0%, transparent 70%);
+}
+
+.gradient2 {
+  position: absolute;
+  width: 288px;
+  height: 288px;
+  left: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 0% 100%, rgba(155, 0, 25, 0.22) 0%, transparent 70%);
+}
+
+.gradient3 {
+  position: absolute;
+  width: 288px;
+  height: 288px;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 100% 100%, rgba(155, 0, 25, 0.22) 0%, transparent 70%);
+}
+
+.gradient4 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8, 3, 7, 0.6) 0%, transparent 15%, transparent 85%, rgba(8, 3, 7, 0.6) 100%);
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(155, 0, 25, 0.15), transparent 40%);
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 672px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 16px 96px;
+  z-index: 1;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.backIcon {
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, rgba(155, 0, 25, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.backText {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 9.92px;
+  color: #9a7a70;
+  letter-spacing: 0.99px;
+  text-transform: uppercase;
+}
+
+.header {
+  width: 100%;
+  padding-top: 40px;
+}
+
+.headerDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.headerLineLeft,
+.headerLineRight {
+  flex: 1;
+  max-width: 64px;
+  min-width: 1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #9b0020);
+}
+
+.headerLineRight {
+  background: linear-gradient(270deg, transparent, #9b0020);
+}
+
+.headerIcon {
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, rgba(155, 0, 25, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.heading {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 30.4px;
+  color: #f0e4d0;
+  text-align: center;
+  letter-spacing: 6.08px;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.subtitle {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #9a7a70;
+  text-align: center;
+  line-height: 1.7;
+  margin: 0;
+  padding-top: 8px;
+}
+
+.headerBottomDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 20px;
+}
+
+.headerBottomLineLeft,
+.headerBottomLineRight {
+  flex: 1;
+  max-width: 96px;
+  min-width: 1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(180, 0, 30, 0.55));
+}
+
+.headerBottomLineRight {
+  background: linear-gradient(270deg, transparent, rgba(180, 0, 30, 0.55));
+}
+
+.headerDot {
+  width: 4px;
+  height: 4px;
+  background: #9b0020;
+  border-radius: 50%;
+}
+
+.formSection {
+  width: 100%;
+  padding-top: 40px;
+}
+
+.formContainer {
+  border: 0.716px solid rgba(139, 0, 20, 0.28);
+  border-radius: 4px;
+  background: #1a0a10;
+  box-shadow: 0 0 30px rgba(140, 0, 20, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
+  padding: 24.716px;
+}
+
+.formTopDivider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #1e1580, #9b0020, #1e1580);
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.textAreaContainer {
+  width: 100%;
+  height: 165.6px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.placeholder {
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
+  font-size: 18.4px;
+  color: rgba(240, 228, 208, 0.5);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.716px solid rgba(139, 0, 20, 0.28);
+  padding-top: 16.716px;
+}
+
+.counter {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 11.52px;
+  color: #9a7a70;
+  letter-spacing: 0.92px;
+}
+
+.confessButton {
+  width: 113.81px;
+  height: 38.698px;
+  border: 0.716px solid rgba(180, 0, 30, 0.4);
+  border-radius: 4px;
+  background: linear-gradient(161.22deg, rgb(155, 0, 32) 0%, rgb(107, 0, 21) 100%);
+  color: #f0e4d0;
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 11.52px;
+  letter-spacing: 1.61px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(140, 0, 20, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.confessButton:hover {
+  box-shadow: 0 0 15px rgba(140, 0, 20, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+}
+
+.keyboardHint {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 9.92px;
+  color: #9a7a70;
+  text-align: center;
+  letter-spacing: 0.99px;
+  margin: 12px 0 0;
+  opacity: 0.5;
+}
+
+.emptyState {
+  padding-top: 40px;
+  opacity: 0.3;
+  text-align: center;
+}
+
+.emptyState p {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #9a7a70;
+  line-height: 1.7;
+  margin: 0;
+}

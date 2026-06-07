@@ -1,0 +1,32 @@
+.feed {
+  margin-top: 24px;
+  max-height: 360px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.confessionItem {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  border: 0.716px solid rgba(139, 0, 20, 0.15);
+}
+
+.confessionText {
+  margin: 0;
+  word-break: break-word;
+  font-family: 'Crimson Text', serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(240, 228, 208, 0.8);
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  text-align: right;
+  margin-top: 4px;
+  opacity: 0.7;
+  font-family: 'Cinzel', serif;
+  color: #9a7a70;
+}

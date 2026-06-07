@@ -1,0 +1,107 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formContainer {
+  border: 0.716px solid rgba(139, 0, 20, 0.28);
+  border-radius: 4px;
+  background: #1a0a10;
+  box-shadow:
+    0 0 30px rgba(140, 0, 20, 0.08),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
+  padding: 24.716px;
+}
+
+.formTopDivider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #1e1580, #9b0020, #1e1580);
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.textarea {
+  width: 100%;
+  height: 165.6px;
+  padding: 0;
+  border: none;
+  resize: none;
+  background: transparent;
+  color: #f0e4d0;
+  font-family: "Crimson Text", serif;
+  font-size: 18.4px;
+  line-height: 1.8;
+  outline: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.textarea::placeholder {
+  color: rgba(240, 228, 208, 0.5);
+}
+
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.716px solid rgba(139, 0, 20, 0.28);
+  padding-top: 16.716px;
+}
+
+.counter {
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+  font-size: 11.52px;
+  color: #9a7a70;
+  letter-spacing: 0.92px;
+}
+
+.counter.error {
+  color: #ff6b6b;
+}
+
+.button {
+  width: 113.81px;
+  height: 38.698px;
+  border: 0.716px solid rgba(180, 0, 30, 0.4);
+  border-radius: 4px;
+  background: linear-gradient(
+    161.22deg,
+    rgb(155, 0, 32) 0%,
+    rgb(107, 0, 21) 100%
+  );
+  color: #f0e4d0;
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+  font-size: 11.52px;
+  letter-spacing: 1.61px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    0 0 10px rgba(140, 0, 20, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.button:hover:not(:disabled) {
+  box-shadow:
+    0 0 15px rgba(140, 0, 20, 0.5),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.keyboardHint {
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+  font-size: 9.92px;
+  color: #9a7a70;
+  text-align: center;
+  letter-spacing: 0.99px;
+  margin: 12px 0 0;
+  opacity: 0.5;
+}
