@@ -26,6 +26,8 @@ export default function App() {
   }, []);
 
   const handleBackToLanding = useCallback(() => {
+    setWormholeActive(false);
+    wormholeRef.current = 0;
     setCurrentPage("landing");
   }, []);
 
