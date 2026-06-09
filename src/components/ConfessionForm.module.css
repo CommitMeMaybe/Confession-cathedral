@@ -10,7 +10,13 @@
   box-shadow:
     0 0 30px rgba(140, 0, 20, 0.08),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
-  padding: 24.716px;
+  padding: 16px;
+}
+
+@media (min-width: 480px) {
+  .formContainer {
+    padding: 24.716px;
+  }
 }
 
 .formTopDivider {
@@ -23,6 +29,7 @@
 
 .textarea {
   width: 100%;
+  min-height: 120px;
   height: 165.6px;
   padding: 0;
   border: none;
@@ -30,11 +37,17 @@
   background: transparent;
   color: #f0e4d0;
   font-family: "Crimson Text", serif;
-  font-size: 18.4px;
+  font-size: clamp(1rem, 2vw, 1.15rem);
   line-height: 1.8;
   outline: none;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .textarea {
+    height: 120px;
+  }
 }
 
 .textarea::placeholder {
@@ -62,8 +75,9 @@
 }
 
 .button {
-  width: 113.81px;
-  height: 38.698px;
+  min-width: 100px;
+  min-height: 44px;
+  padding: 0 16px;
   border: 0.716px solid rgba(180, 0, 30, 0.4);
   border-radius: 4px;
   background: linear-gradient(
@@ -74,7 +88,7 @@
   color: #f0e4d0;
   font-family: "Cinzel", serif;
   font-weight: 400;
-  font-size: 11.52px;
+  font-size: clamp(0.65rem, 1.5vw, 0.72rem);
   letter-spacing: 1.61px;
   text-transform: uppercase;
   cursor: pointer;

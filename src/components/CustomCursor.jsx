@@ -1,9 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
   const cursorRef = useRef(null);
+  const [isPointer, setIsPointer] = useState(false);
 
   useEffect(() => {
+    const mq = window.matchMedia("(pointer: fine)");
+    setIsPointer(mq.matches);
+  }, []);
+
+  useEffect(() => {
+    if (!isPointer) return;
     const el = cursorRef.current;
     if (!el) return;
     el.style.left = "-100px";
@@ -14,7 +21,9 @@ export default function CustomCursor() {
     };
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
-  }, []);
+  }, [isPointer]);
+
+  if (!isPointer) return null;
 
   return (
     <div

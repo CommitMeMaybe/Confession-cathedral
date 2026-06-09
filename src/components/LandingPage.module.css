@@ -5,8 +5,8 @@
   align-items: flex-start;
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 683px;
+  height: 100dvh;
+  min-height: 600px;
 }
 
 .background {
@@ -17,9 +17,10 @@
 
 .gradient1 {
   position: absolute;
-  width: 700px;
+  width: min(90vw, 700px);
   height: 500px;
-  left: 331.67px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 0;
   background: radial-gradient(ellipse at 50% 0%, rgba(42, 24, 160, 0.32) 0%, rgba(20, 10, 100, 0.14) 40%, transparent 70%);
 }
@@ -101,7 +102,7 @@
 
 .lineLeft,
 .lineRight {
-  width: 112px;
+  width: min(20vw, 112px);
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(155, 0, 25, 0.8));
 }
@@ -120,10 +121,10 @@
 .heading {
   font-family: 'Cinzel', serif;
   font-weight: 400;
-  font-size: 80px;
+  font-size: clamp(2.25rem, 10vw, 5rem);
   color: #f0e4d0;
   text-align: center;
-  letter-spacing: 16px;
+  letter-spacing: clamp(0.15em, 2vw, 0.3em);
   text-transform: uppercase;
   line-height: 1.12;
   margin: 0;
@@ -156,16 +157,16 @@
 
 .enterButton {
   margin-top: 48px;
-  padding: 15.71px 0;
-  width: 279.78px;
-  height: 51.66px;
+  padding: 15.71px 24px;
+  min-width: 200px;
+  width: min(80vw, 280px);
   border: 0.716px solid rgba(180, 0, 30, 0.45);
   border-radius: inherit;
   background: linear-gradient(169.54deg, rgb(155, 0, 32) 0%, rgb(90, 0, 18) 100%);
   color: #f0e4d0;
   font-family: 'Cinzel', serif;
   font-weight: 400;
-  font-size: 12.16px;
+  font-size: clamp(0.65rem, 1.5vw, 0.76rem);
   letter-spacing: 2.68px;
   text-transform: uppercase;
   cursor: pointer;
