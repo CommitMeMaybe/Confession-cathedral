@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "prebuild": "chmod +x node_modules/.bin/vite 2>/dev/null || true",
     "build": "vite build",
     "preview": "vite preview"
   },
