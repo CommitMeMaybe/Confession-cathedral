@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import styles from './LandingPage.module.css';
+import styles from './PsychedelicBackground.module.css';
 
 // Vertex shader (passes through position)
 const vertexShaderSrc = `
@@ -134,6 +134,14 @@ export default function PsychedelicBackground({ mousePosRef, wormholeRef }) {
     const gl = canvas.getContext('webgl');
     if (!gl) return;
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let baseHue = 350.0;
+    const hueVar = getComputedStyle(document.documentElement).getPropertyValue('--accent-hue');
+    if (hueVar) {
+      const parsed = parseFloat(hueVar.trim());
+      if (!isNaN(parsed)) baseHue = parsed;
+    }
+
     const compile = (src, type) => {
       const shader = gl.createShader(type);
       gl.shaderSource(shader, src);
@@ -145,6 +153,7 @@ export default function PsychedelicBackground({ mousePosRef, wormholeRef }) {
       }
       return shader;
     };
+
     const vert = compile(vertexShaderSrc, gl.VERTEX_SHADER);
     const frag = compile(fragmentShaderSrc, gl.FRAGMENT_SHADER);
     const program = gl.createProgram();
@@ -166,12 +175,8 @@ export default function PsychedelicBackground({ mousePosRef, wormholeRef }) {
     const uTransition = gl.getUniformLocation(program, 'u_transition');
 
     const quad = new Float32Array([
-      -1, -1,
-       1, -1,
-      -1,  1,
-      -1,  1,
-       1, -1,
-       1,  1,
+      -1, -1, 1, -1, -1, 1,
+      -1,  1, 1, -1,  1, 1,
     ]);
     const buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
@@ -186,9 +191,11 @@ export default function PsychedelicBackground({ mousePosRef, wormholeRef }) {
     window.addEventListener('resize', resize);
 
     let start = null;
+    let animId;
+
     const render = (time) => {
       if (!start) start = time;
-      let elapsed = prefersReduced ? 0 : (time - start) / 1000;
+      const elapsed = prefersReduced ? 0 : (time - start) / 1000;
       gl.clearColor(0, 0, 0, 0);
       gl.clear(gl.COLOR_BUFFER_BIT);
 
@@ -201,28 +208,21 @@ export default function PsychedelicBackground({ mousePosRef, wormholeRef }) {
       const mouse = mousePosRef?.current || { x: 0.5, y: 0.5 };
       gl.uniform2f(uMouse, mouse.x, mouse.y);
       gl.uniform2f(uRes, canvas.width, canvas.height);
-      
-      let baseHue = 350.0;
-      const rootStyles = getComputedStyle(document.documentElement);
-      const hueVar = rootStyles.getPropertyValue('--accent-hue');
-      if (hueVar) {
-        const parsed = parseFloat(hueVar.trim());
-        if (!isNaN(parsed)) baseHue = parsed;
-      }
       gl.uniform1f(uHue, baseHue);
       gl.uniform1f(uRadius, 0.55);
       gl.uniform1f(uIntensity, 1.0);
       gl.uniform1f(uTransition, wormholeRef?.current ?? 0);
 
       gl.drawArrays(gl.TRIANGLES, 0, 6);
-      requestAnimationFrame(render);
+      animId = requestAnimationFrame(render);
     };
-    requestAnimationFrame(render);
+    animId = requestAnimationFrame(render);
 
     return () => {
+      cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);
     };
-  }, [mousePosRef]);
+  }, []);
 
   return <canvas ref={canvasRef} className={styles.canvas} />;
 }

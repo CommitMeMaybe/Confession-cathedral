@@ -1,26 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function CustomCursor() {
-  const [pos, setPos] = useState({ x: -100, y: -100 });
+  const cursorRef = useRef(null);
 
   useEffect(() => {
-    const move = (e) => setPos({ x: e.clientX, y: e.clientY });
+    const el = cursorRef.current;
+    if (!el) return;
+    el.style.left = "-100px";
+    el.style.top = "-100px";
+
+    const move = (e) => {
+      el.style.transform = `translate(${e.clientX - 14}px, ${e.clientY - 18}px)`;
+    };
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
   return (
     <div
+      ref={cursorRef}
       style={{
         position: "fixed",
-        left: pos.x,
-        top: pos.y,
+        left: 0,
+        top: 0,
         width: 0,
         height: 0,
         zIndex: 9999,
         pointerEvents: "none",
-        transform: "translate(-50%, -50%)",
       }}
+      aria-hidden="true"
     >
       <svg
         width="28"

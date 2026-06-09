@@ -214,16 +214,6 @@
   border-radius: 50%;
 }
 
-/* Canvas overlay for psychotropic background */
-.canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-
 /* Wormhole transition — content sinks into the portal */
 .wormhole .content {
   transform: scale(0);
