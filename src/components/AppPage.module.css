@@ -5,8 +5,8 @@
   align-items: flex-start;
   position: relative;
   width: 100%;
-  min-height: 683px;
-  height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
 .background {

@@ -1,7 +1,5 @@
 .feed {
   margin-top: 24px;
-  max-height: 360px;
-  overflow-y: auto;
   width: 100%;
 }
 
